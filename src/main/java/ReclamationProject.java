@@ -8,19 +8,47 @@
  * 5. Remove unnecessary comments as appropriate
  */
 
-public class ReclamationProject
-{
-    static String doit(String a,String b){
-        if (a.length() > b.length()){
-            String c = a; // TODO: set c to a
-            a=b; b=c;}
-        String r = (a.equals(b)) ? "" : ""; // I love the ternary operator!
+/**
+ * Class called ReclamationProject.
+ */
+
+public class ReclamationProject {
+    /**
+     * Method called doit.
+     * @param a string
+     * @param b string
+     * @return string
+     */
+
+    public static String doit(final String a, final String b) {
+        String aTemp = a;
+        String bTemp = b;
+        if (a.length() > b.length()) {
+            String c = a;
+            aTemp = b;
+            bTemp = c;
+        }
+        String r;
+        if (a.equals(b)) {
+            r = "";
+        } else {
+            r = "";
+        }
+
         /*
          * For loop with i
          */
-        for (int i = 0; i < a.length(); i++) { for (int j = a.length() - i; j > 0; j--) {
-                for (int k = 0; k < b.length()- j; k++) {
-                    r = (a.regionMatches(i, b, k, j) && j >r.length()) ? a.substring(i,i + j) : r; // Do it!
-                        }} // Ah yeah
-        } return r; }
+        for (int i = 0; i < a.length(); i++) {
+            for (int j = a.length() - i; j > 0; j--) {
+                for (int k = 0; k < b.length() - j; k++) {
+                    if (a.regionMatches(i, b, k, j) && j > r.length()) {
+                        r = a.substring(i, i + j);
+                    } else {
+                        r = r;
+                    }
+                }
+            } // Ah yeah
+        }
+        return r;
+    }
 }
